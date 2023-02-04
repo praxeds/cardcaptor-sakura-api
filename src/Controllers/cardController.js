@@ -21,18 +21,33 @@ const cardController = {
   pagination: async (req, res) => {
     try {
       const cards = await Card.find();
-      const page = req.query.page;
-      const limit = req.query.limit;
+      const page = parseInt(req.query.page);
+      const limit = parseInt(req.query.limit);
 
       const startIndex = (page - 1) * limit;
       const endIndex = page * limit;
 
-      const resultCards = cards.slice(startIndex, endIndex);
-      res.json(resultCards);
+      const results = {};
+      if (endIndex < cards.length) {
+        results.next = {
+          page: page + 1,
+          limit: limit,
+        };
+      }
+
+      if (startIndex > 0) {
+        results.previous = {
+          page: page - 1,
+          limit: limit,
+        };
+      }
+
+      results.results = cards.slice(startIndex, endIndex);
+      res.json(results);
     } catch (error) {
       console.log(error);
     }
-  }
+  },
 };
 
 module.exports = cardController;
