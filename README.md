@@ -1,7 +1,5 @@
 ![Header](./public/assets/header.png)
 
-<br/>
-
 <div align="center">
   <h1>Cardcaptor Sakura API 🌸</h1>
   
@@ -9,10 +7,10 @@
 
 <br/><br/>
 
-| HTTP Method | Endpoint         | Returns     |
-|   :----:    |      :----:      |   :----:    |
-| GET         | api/cards        | all cards   |
-| GET         | api/cards/random | random card |
+| HTTP Method |     Endpoint     |   Returns   |
+| :---------: | :--------------: | :---------: |
+|     GET     |    api/cards     |  all cards  |
+|     GET     | api/cards/random | random card |
 
 <br/><br/>
 
@@ -68,7 +66,15 @@
 
 ## 🚀 Quick start
 
-```
-  npm install
-  npm start
-```
+<div align="center">
+
+<br/><br/>
+
+|                                  |     |     |     |                                                       |
+| :------------------------------: | :-: | :-: | :-: | ----------------------------------------------------: |
+| npm install <br/><br/> npm start |     |     |     | <img width="200px" src="./public/assets/footer.png"/> |
+|                                  |     |     |     |                                                       |
+
+<br/><br/>
+
+</div>
