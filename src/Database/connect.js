@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
-const MONGODB_URI = require("./login");
 
 async function connect() {
   try {
     mongoose.set("strictQuery", false);
 
     await mongoose.connect(
-      `${MONGODB_URI}`,
+      process.env.MONGODB_URI,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
