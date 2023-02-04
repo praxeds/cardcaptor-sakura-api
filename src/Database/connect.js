@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
-const { username, password, cluster } = require("./login");
+const MONGODB_URI = require("./login");
 
 async function connect() {
   try {
     mongoose.set("strictQuery", false);
 
     await mongoose.connect(
-      `mongodb+srv://${username}:${password}@${cluster}`,
+      `${MONGODB_URI}`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
