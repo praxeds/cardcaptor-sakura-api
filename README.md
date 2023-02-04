@@ -18,10 +18,10 @@
 
 Currently supported query string parameters:
 
-| Parameter | Description                                                   |
-| --------- | ------------------------------------------------------------- |
-| page      | Returns a paginated set. Default set to 1.                    |
-| limit     | The maximum amount of cards to be returned. Default set to 6. |
+| Parameter | Description                                 |
+| --------- | ------------------------------------------- |
+| page      | Returns a paginated set.                    |
+| limit     | The maximum amount of cards to be returned. |
 
 <br/>
 
