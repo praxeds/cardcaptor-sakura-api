@@ -1,4 +1,4 @@
-const Card = require("../models/card");
+const Card = require("../Models/card");
 
 const cardController = {
   create: async (req, res) => {
