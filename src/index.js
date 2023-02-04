@@ -1,11 +1,19 @@
 const express = require("express");
+const cors  = require("cors");
 const mongoose = require("mongoose");
 
 const app = express();
 
-mongoose.set('strictQuery', false).connect("mongodb://localhost/cardcaptor-sakura");
-
+app.use(cors());
 app.use(express.json());
+
+//DB connection
+const connection = require("./Database/connect");
+connection();
+
+//Routes
+const router = require("./Routes/router");
+app.use("/api", router);
 
 app.listen(3000, () => {
   console.log(`🌸 Server is listening on http://localhost:3000`);
