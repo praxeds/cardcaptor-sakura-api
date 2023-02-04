@@ -1,30 +1,6 @@
 const Card = require("../Models/card");
 
 const cardController = {
-  // No need for this route, since all canon cards have been added
-  // create: async (req, res) => {
-  //   try {
-  //     const card = {
-  //       name: req.body.name,
-  //       kanji: req.body.kanji,
-  //       katakana: req.body.katakana,
-  //       clowCardUrl: req.body.clowCardUrl,
-  //       sakuraCardUrl: req.body.sakuraCardUrl,
-  //       sign: req.body.sign,
-  //       hierarchy: req.body.hierarchy,
-  //       magicType: req.body.magicType,
-  //       temperament: req.body.temperament,
-  //       appearance: req.body.appearance,
-  //       personality: req.body.personality,
-  //       abilities: req.body.abilities,
-  //       trivia: req.body.trivia,
-  //     };
-  //     const response = await Card.create(card);
-  //     res.status(201).json(response);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // },
   getAll: async (req, res) => {
     try {
       const cards = await Card.find();
@@ -42,6 +18,21 @@ const cardController = {
       console.log(error);
     }
   },
+  pagination: async (req, res) => {
+    try {
+      const cards = await Card.find();
+      const page = req.query.page;
+      const limit = req.query.limit;
+
+      const startIndex = (page - 1) * limit;
+      const endIndex = page * limit;
+
+      const resultCards = cards.slice(startIndex, endIndex);
+      res.json(resultCards);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 };
 
 module.exports = cardController;

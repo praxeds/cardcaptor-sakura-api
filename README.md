@@ -9,14 +9,31 @@
 
 | HTTP Method |     Endpoint     |   Returns   |
 | :---------: | :--------------: | :---------: |
-|     GET     |    api/cards     |  all cards  |
+|     GET     |  api/cards/all   |  all cards  |
 |     GET     | api/cards/random | random card |
 
 <br/><br/>
 
 </div>
 
-# Example
+Currently supported query string parameters:
+
+| Parameter | Description                                                   |
+| --------- | ------------------------------------------------------------- |
+| page      | Returns a paginated set. Default set to 1.                    |
+| limit     | The maximum amount of cards to be returned. Default set to 6. |
+
+<br/>
+
+Example:
+
+```bash
+
+📃  First page showing 10 cards
+https://cardcaptorsakura.live/api/cards?page=1&limit=10
+```
+
+## JSON Data Model Example
 
 ```json
 {
@@ -70,11 +87,30 @@
 
 <br/><br/>
 
-|                                  |                                                        |
-| :------------------------------: |  ----------------------------------------------------: |
-| npm install <br/><br/> npm start |  <img width="220px" src="./public/assets/footer.png"/> |
-|                                  |                                                        |
+|                                  |                                                       |
+| :------------------------------: | ----------------------------------------------------: |
+| npm install <br/><br/> npm start | <img width="220px" src="./public/assets/footer.png"/> |
+|                                  |                                                       |
 
 <br/><br/>
 
 </div>
+
+### 🛠️ Built with
+
+<br/>
+
+<div align="center">
+
+![NodeJS](https://img.shields.io/badge/node.js-c03f6e?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-91c8ef?style=for-the-badge)
+![MongoDB](https://img.shields.io/badge/MongoDB-288565?style=for-the-badge&logo=mongodb&logoColor=white)
+![Mongoose](https://img.shields.io/badge/Mongoose-42455d?style=for-the-badge&logo=mongoose&logoColor=white)
+
+</div>
+
+<br/>
+
+### 🌸 Resources
+
+- [Cardcaptor Sakura Wiki](https://cardcaptors.fandom.com/wiki/Cardcaptor_Sakura_Wiki)
